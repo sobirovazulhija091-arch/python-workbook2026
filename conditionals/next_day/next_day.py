@@ -1,22 +1,21 @@
 year = int(input())
 month = int(input())
 day = int(input())
-is_leap = False
-if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-    is_leap = True
-if month in:
-    max_days = 31
-elif month in:
-    max_days = 30
-elif month == 2:
-    max_days = 29 if is_leap else 28
+leap = year % 400 == 0 or (year % 4 == 0 and year % 100 != 0)
+if month == 2:
+    if leap:
+        days_in_month = 29
+    else:
+        days_in_month = 28
+elif month == 4 or month == 6 or month == 9 or month == 11:
+    days_in_month = 30
 else:
-    max_days = 0 
+    days_in_month = 31
 day += 1
-if day > max_days:
+if day > days_in_month:
     day = 1
     month += 1
 if month > 12:
-        month = 1
-        year += 1
-print(f"{year}-{month:02d}-{day:02d}")
+    month = 1
+    year += 1
+print(f"{year:04d}-{month:02d}-{day:02d}")

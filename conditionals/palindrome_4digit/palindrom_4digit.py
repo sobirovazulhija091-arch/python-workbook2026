@@ -1,5 +1,5 @@
 num=int(input())
-N1=num//100 
+N1=num//1000 
 N2=(num//100)%10 
 N3=(num//10)%10 
 N4=num%10
